@@ -1,0 +1,6 @@
+*/__pycache__/
+venv/
+dataset/*
+checkpoint/*
+!dataset/getTrainData.js
+!dataset/getValidationData.js
