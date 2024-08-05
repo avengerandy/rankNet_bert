@@ -55,6 +55,7 @@ def getDevice():
     return device
 
 rbt3 = AutoModel.from_pretrained('hfl/rbt3')
+rbt3.train()
 if getDevice() == 'cuda':
     rbt3 = rbt3.cuda()
 
@@ -102,7 +103,7 @@ def train(dataloader, model, lossFunction, optimizer):
 
 lossFunction = nn.BCEWithLogitsLoss()
 optimizer = optim.Adam(model.parameters(), lr = 2e-5)
-epoch = 2
+epoch = 5
 for i in range(epoch):
     trainCurrentRate = train(dataloader, model, lossFunction, optimizer)
     print(f'epoch{i} trainCurrentRate: {trainCurrentRate:.2f}')

@@ -6,6 +6,7 @@ from transformers import AutoTokenizer, AutoModel
 
 tokenizer = AutoTokenizer.from_pretrained('hfl/rbt3')
 rbt3 = AutoModel.from_pretrained('./checkpoint/rbt3')
+rbt3.eval()
 
 class RankNet(nn.Module):
     def __init__(self):
